@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.vr {
+  opacity: 0.9;
+  width: 2px;
+  background-color: var(--custom-white-300);
+  border-radius: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table-header {
+  color: var(--custom-purple-200);
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal .modal-content {
+  background-color: var(--custom-dark-100);
+  padding: 10px 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.modal .modal-header,
+.modal .modal-footer {
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.modal .popup-btn,
+.form-container .btn{
+  background-color: var(--custom-dark-300);
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal .popup-btn:hover {
+  background-color: var(--custom-purple-100);
+}
+
+.form-control,
+.form-control:focus,
+.form-select,
+.form-select:focus {
+  background-color: inherit;
+  box-shadow: none;
+  border-color: var(--custom-dark-300);
+  color: var(--custom-white-100);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--custom-purple-100);
+}
+
+.form-control::placeholder {
+  color: var(--custom-purple-200);
+}
+
+.form-select {
+  background-color: var(--custom-dark-100) !important;
+}
+
+.no-data-found {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--custom-dark-300);
+}
+
+.item-box:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  color: var(--custom-white-100);
+}
+
+.item-box .item-name {
+  font-size: 20px;
+}
+
+.item-box .item-genre {
+  font-size: 13px;
+  color: var(--custom-white-300);
+}
+
+.item-box {
+  text-decoration: none;
+  color: var(--custom-white-100);
 }
