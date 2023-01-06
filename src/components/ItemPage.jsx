@@ -45,7 +45,6 @@ const CommentForm = (props) => {
             .then(clearData())
             .then(handleHide())
             .then(NotificationManager.success("New comment was added", "Success!"))
-            .then(refreshPage())
         }
     };
 
