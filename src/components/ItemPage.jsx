@@ -90,7 +90,6 @@ const PageContent = () => {
     const { isAuthenticated } = useSession();
 
     const [queryParameters] = useSearchParams();
-    const currentItemID = queryParameters.get("id");
 
     const [currentItem, setCurrentItem] = useState();
     const [isDataLoaded, setIsDataLoaded] = useState(false);
@@ -115,11 +114,14 @@ const PageContent = () => {
 
     useEffect(() => {
         if (!isDataLoaded && currentItem === undefined) {
-            api.get(`movies`, { params: { id: currentItemID } }).then((response) => {
-                handleResponse(response);
+            const searchParams = { params: {} };
+            searchParams.params.id = Number(queryParameters.get("id"));
+
+            api.get(`movies`, searchParams).then((response) => {
+                handleResponse(response);           
             });
         }
-    }, [api, isDataLoaded, currentItem, currentItemID]);
+    }, [api, isDataLoaded, currentItem]);
 
     return(
         <>

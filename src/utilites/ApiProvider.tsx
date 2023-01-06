@@ -28,15 +28,15 @@ export const createDefaultApiInstance = (url:string):ApiInstance => {
     const api:ApiInstance = axios.create({
         baseURL: url,
         timeout: 10000,
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "X-Requested-With": "XmlHttpRequest",
-        },
-        paramsSerializer: {
-            encode: parse,
-            serialize: stringify,
-        }
+        // headers: {
+        //     Accept: "application/json",
+        //     "Content-Type": "application/json",
+        //     "X-Requested-With": "XmlHttpRequest",
+        // },
+        // paramsSerializer: {
+        //     encode: parse,
+        //     serialize: stringify,
+        // }
     });
 
     return api;
@@ -49,12 +49,6 @@ export const createApi = ():ApiInstance => {
     } else {
         throw new Error("baseURL is undefined");
     }
-
-    api.paths = {
-        authenticate: () => "/login/",
-        updatePassword: () => "v1/settings/update_password",
-    };
-
     api.url = baseURL;
     return api;
 }
